@@ -6,7 +6,14 @@
     <description>Recent content in Posts on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Thu, 29 May 2025 20:20:56 -0700</lastBuildDate>
     <atom:link href="https://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Práctica 4: introducción a Prolog</title>
+      <link>https://example.org/posts/practica4/</link>
+      <pubDate>Thu, 29 May 2025 20:20:56 -0700</pubDate>
+      <guid>https://example.org/posts/practica4/</guid>
+      <description>&lt;h2 id=&#34;tabla-de-contenido&#34;&gt;Tabla de contenido&lt;/h2&gt;&#xA;&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;&#xA;&lt;p&gt;En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.&lt;/p&gt;&#xA;&lt;h3 id=&#34;qué-es-el-paradigma-lógico&#34;&gt;¿Qué es el Paradigma Lógico?&lt;/h3&gt;&#xA;&lt;p&gt;El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir &lt;em&gt;cómo&lt;/em&gt; realizar una tarea (como en los lenguajes imperativos), se describe &lt;em&gt;qué es verdad&lt;/em&gt; y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

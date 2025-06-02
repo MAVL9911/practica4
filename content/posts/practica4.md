@@ -6,50 +6,6 @@ title = 'Práctica 4: introducción a Prolog'
 
 ## Tabla de contenido
 
-- [Tabla de contenido](#tabla-de-contenido)
-- [Introducción](#introducción)
-  - [¿Qué es el Paradigma Lógico?](#qué-es-el-paradigma-lógico)
-  - [¿Qué es Prolog?](#qué-es-prolog)
-- [Primeros Pasos con Prolog](#primeros-pasos-con-prolog)
-  - [Instalación](#instalación)
-  - ["¡Hola, Mundo!" en Prolog](#hola-mundo-en-prolog)
-  - [Comentarios](#comentarios)
-- [Conceptos Fundamentales de Prolog](#conceptos-fundamentales-de-prolog)
-  - [Hechos (Facts)](#hechos-facts)
-    - [Guía para escribir hechos](#guía-para-escribir-hechos)
-    - [Sintaxis de hechos](#sintaxis-de-hechos)
-    - [Ejemplos de hechos en Prolog](#ejemplos-de-hechos-en-prolog)
-  - [Reglas (Rules)](#reglas-rules)
-    - [Sintaxis de reglas](#sintaxis-de-reglas)
-    - [Ejemplos de reglas en Prolog](#ejemplos-de-reglas-en-prolog)
-  - [Consultas (Queries)](#consultas-queries)
-  - [Base de Conocimiento](#base-de-conocimiento)
-- [Relaciones en Prolog](#relaciones-en-prolog)
-  - [Ejemplo Práctico: Familia](#ejemplo-práctico-familia)
-  - [Recursión en Relaciones Familiares](#recursión-en-relaciones-familiares)
-- [Objetos de Datos en Prolog](#objetos-de-datos-en-prolog)
-  - [Átomos](#átomos)
-  - [Números](#números)
-  - [Variables](#variables)
-  - [Variables Anónimas](#variables-anónimas)
-  - [Estructuras](#estructuras)
-- [Operadores](#operadores)
-  - [Operadores de Comparación](#operadores-de-comparación)
-  - [Operadores Aritméticos](#operadores-aritméticos)
-- [Control de Flujo](#control-de-flujo)
-  - [Recursión para "Bucles"](#recursión-para-bucles)
-  - [Decisiones mediante Cláusulas](#decisiones-mediante-cláusulas)
-- [Listas en Prolog](#listas-en-prolog)
-  - [Representación de Listas](#representación-de-listas)
-  - [Operaciones Básicas con Listas](#operaciones-básicas-con-listas)
-    - [Comprobación de Pertenencia (member)](#comprobación-de-pertenencia-member)
-    - [Concatenación (append)](#concatenación-append)
-    - [Cálculo de Longitud (length)](#cálculo-de-longitud-length)
-- [Retroceso (Backtracking)](#retroceso-backtracking)
-- [Predicados Integrados Útiles](#predicados-integrados-útiles)
-- [Conclusión](#conclusión)
-- [Referencias](#referencias)
-
 ## Introducción
 
 En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.
@@ -121,8 +77,8 @@ Los hechos son afirmaciones que se consideran verdaderas sobre el mundo. Declara
 
 - Los nombres de relaciones (predicados) y objetos (átomos) usualmente empiezan con minúscula.
 - La relación aparece primero, seguida de los objetos (argumentos) entre paréntesis, separados por comas.
-- Todo hecho debe terminar con un punto (`.`).
-- Ejemplo: `gato(tom).` se denomina predicado o cláusula.
+- Todo hecho debe terminar con un punto.
+- Ejemplo: se denomina predicado o cláusula.
 
 #### Sintaxis de hechos
 
@@ -160,7 +116,7 @@ P :- Q.
 P :- R.
 ```
 
-Si tenemos `P :- Q,R;S,T,U.`, se interpreta como `P :- (Q,R);(S,T,U).`
+Si tenemos , se interpreta como 
 
 #### Ejemplos de reglas en Prolog
 
@@ -201,7 +157,7 @@ Comida = pasta.
 
 Un conjunto de hechos y reglas forma una base de conocimiento. Usualmente se guarda en un archivo con extensión `.pl`.
 
-**Ejemplo: `kb1.pl`**
+**Ejemplo: **
 
 ```prolog
 % kb1.pl
@@ -327,28 +283,28 @@ Prolog maneja varios tipos de datos, llamados términos.
 ### Átomos
 
 Nombres simbólicos. Comienzan con minúscula o están entre comillas simples si contienen espacios o empiezan con mayúscula.
-Ej: `tom`, `rojo`, `'Hola Mundo'`, `x_45`.
+
 
 ### Números
 
 Enteros y de punto flotante.
-Ej: `100`, `1235`, `3.1416`, `-50`.
+
 
 ### Variables
 
-Comienzan con una letra mayúscula o un guion bajo (`_`). Representan valores desconocidos que Prolog intenta instanciar.
-Ej: `X`, `Y`, `Nombre`, `_variable`.
+Comienzan con una letra mayúscula o un guion bajo (). Representan valores desconocidos que Prolog intenta instanciar.
+
 
 ### Variables Anónimas
 
-Un solo guion bajo (`_`). Se usa cuando el valor de una variable no es importante. Cada `_` es una variable distinta.
-Ej: `has_child(X) :- parent(X, _).` (no nos importa quién es el hijo, solo que X tenga uno).
+Un solo guion bajo (). Se usa cuando el valor de una variable no es importante. Cada `_` es una variable distinta.
+Ej:  (no nos importa quién es el hijo, solo que X tenga uno).
 
 ### Estructuras
 
 Objetos complejos compuestos por un functor (nombre) y argumentos.
-Ej: `punto(10, 20)`, `fecha(9, mayo, 2017)`.
-Los hechos y reglas son en sí estructuras. `parent(pam, bob)` es una estructura con functor `parent` y aridad 2.
+Ej: .
+Los hechos y reglas son en sí estructuras.  es una estructura con functor  y aridad 2.
 
 ## Operadores
 
@@ -356,30 +312,13 @@ Los hechos y reglas son en sí estructuras. `parent(pam, bob)` es una estructura
 
 Evalúan relaciones numéricas.
 
-| Operador  | Descripción              |
-|-----------|--------------------------|
-| `X > Y`   | X es mayor que Y         |
-| `X < Y`   | X es menor que Y         |
-| `X >= Y`  | X es mayor o igual que Y |
-| `X =< Y`  | X es menor o igual que Y |
-| `X =:= Y` | los valores de X e Y son numéricamente iguales |
-| `X =\= Y` | los valores de X e Y son numéricamente diferentes |
 
-Ejemplo: `?- 5 > 3.` devuelve `true.`.
 
 ### Operadores Aritméticos
 
-Para realizar cálculos. La evaluación se hace con el operador `is`.
+Para realizar cálculos. La evaluación se hace con el operador 
 
-| Operador | Descripción     |
-|----------|-----------------|
-| `+`      | Suma            |
-| `-`      | Resta           |
-| `*`      | Multiplicación  |
-| `/`      | División        |
-| `**`     | Potencia        |
-| `//`     | División entera |
-| `mod`    | Módulo          |
+
 
 Ejemplo:
 
@@ -396,7 +335,7 @@ Z = 3.
 
 ## Control de Flujo
 
-Prolog no tiene estructuras de bucle `for` o `while` como otros lenguajes. El control se logra mediante recursión y el mecanismo de backtracking.
+Prolog no tiene estructuras de bucle como otros lenguajes. El control se logra mediante recursión y el mecanismo de backtracking.
 
 ### Recursión para "Bucles"
 
@@ -412,7 +351,7 @@ contar(N, Max) :-
     contar(N1, Max).
 ```
 
-Consulta: `?- contar(1, 5).` imprimirá 1, 2, 3, 4, 5.
+Consulta:  imprimirá 1, 2, 3, 4, 5.
 
 ### Decisiones mediante Cláusulas
 
@@ -441,18 +380,7 @@ true.
 
 Las listas son una estructura de datos fundamental y muy usada.
 
-### Representación de Listas
 
-- Lista vacía: `[]`
-- Lista con elementos: `[elemento1, elemento2, elemento3]`
-- Una lista se compone de:
-  - **Cabeza (Head)**: el primer elemento.
-  - **Cola (Tail)**: el resto de la lista (que es también una lista).
-- El separador `|` se usa para distinguir cabeza y cola: `[Cabeza | Cola]`
-  Ejemplos:
-  `[a, b, c]` es `[a | [b, c]]`
-  `[a, b, c]` es `[a | [b | [c | []]]]`
-  `[a]` es `[a | []]`
 
 ### Operaciones Básicas con Listas
 
@@ -513,7 +441,6 @@ Consulta:
 L = 3.
 ```
 
-(Nota: `member/2`, `append/3`, `length/2` suelen ser predicados predefinidos en SWI-Prolog).
 
 ## Retroceso (Backtracking)
 
@@ -548,32 +475,8 @@ X = b ;
 false.
 ```
 
-## Predicados Integrados Útiles
-
-Prolog ofrece muchos predicados predefinidos. Algunos comunes son:
-
-| Predicado    | Descripción                                    |
-|--------------|------------------------------------------------|
-| `var(X)`     | Verdadero si X es una variable no instanciada. |
-| `nonvar(X)`  | Verdadero si X no es una variable.             |
-| `atom(X)`    | Verdadero si X es un átomo.                    |
-| `number(X)`  | Verdadero si X es un número.                   |
-| `integer(X)` | Verdadero si X es un entero.                   |
-| `float(X)`   | Verdadero si X es un número de punto flotante. |
-| `atomic(X)`  | Verdadero si X es un átomo o un número.        |
-| `compound(X)`| Verdadero si X es un término compuesto (estructura).|
-| `ground(X)`  | Verdadero si X no contiene variables no instanciadas.|
-| `write(Term)`| Escribe `Term` en la salida.                   |
-| `nl`         | Escribe una nueva línea.                       |
-| `read(Term)` | Lee un término de la entrada y lo unifica con `Term`. |
-| `consult(File)`| Carga un archivo Prolog. Similar a `[File].` |
-| `halt.`      | Termina la sesión de Prolog.                   |
 
 ## Conclusión
 
 Esta práctica ha proporcionado una introducción sólida al lenguaje Prolog y al paradigma lógico. Pudimos explorar sus conceptos fundamentales, desde hechos y reglas hasta listas y retroceso. Prolog es una herramienta muy poderosa para resolver problemas lógicos y de inteligencia artificial, y su enfoque declarativo ofrece una perspectiva única en comparación con los lenguajes imperativos tradicionales.
 
-## Referencias
-
-- [SWI-Prolog Quickstart](https://www.swi-prolog.org/pldoc/man?section=quickstart)
-- [Prolog Tutorial](https://www.tutorialspoint.com/prolog/index.htm)

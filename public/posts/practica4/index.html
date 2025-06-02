@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Práctica 4: introducción a Prolog | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Tabla de contenido
+Introducción
+En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.
+¿Qué es el Paradigma Lógico?
+El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir cómo realizar una tarea (como en los lenguajes imperativos), se describe qué es verdad y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.">
+    <meta name="generator" content="Hugo 0.144.2">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://example.org/posts/practica4/">
+    
+
+    <meta property="og:url" content="https://example.org/posts/practica4/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Práctica 4: introducción a Prolog">
+  <meta property="og:description" content="Tabla de contenido Introducción En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.
+¿Qué es el Paradigma Lógico? El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir cómo realizar una tarea (como en los lenguajes imperativos), se describe qué es verdad y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-29T20:20:56-07:00">
+    <meta property="article:modified_time" content="2025-05-29T20:20:56-07:00">
+
+  <meta itemprop="name" content="Práctica 4: introducción a Prolog">
+  <meta itemprop="description" content="Tabla de contenido Introducción En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.
+¿Qué es el Paradigma Lógico? El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir cómo realizar una tarea (como en los lenguajes imperativos), se describe qué es verdad y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.">
+  <meta itemprop="datePublished" content="2025-05-29T20:20:56-07:00">
+  <meta itemprop="dateModified" content="2025-05-29T20:20:56-07:00">
+  <meta itemprop="wordCount" content="1600">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Práctica 4: introducción a Prolog">
+  <meta name="twitter:description" content="Tabla de contenido Introducción En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.
+¿Qué es el Paradigma Lógico? El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir cómo realizar una tarea (como en los lenguajes imperativos), se describe qué es verdad y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.">
+
+      
+    
+	
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Práctica 4: introducción a Prolog</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-29T20:20:56-07:00">May 29, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="tabla-de-contenido">Tabla de contenido</h2>
+<h2 id="introducción">Introducción</h2>
+<p>En el desarrollo de esta práctica, exploraremos el paradigma lógico y el lenguaje de programación Prolog, aprendiendo conceptos y como es que este lenguaje funciona, asi como comprender lo básico. El objetivo es familiarizarnos con los conceptos fundamentales de Prolog, su sintaxis y cómo se utiliza para resolver problemas lógicos.</p>
+<h3 id="qué-es-el-paradigma-lógico">¿Qué es el Paradigma Lógico?</h3>
+<p>El paradigma lógico se basa en la idea de que los programas son conjuntos de declaraciones lógicas (hechos y reglas). En lugar de describir <em>cómo</em> realizar una tarea (como en los lenguajes imperativos), se describe <em>qué es verdad</em> y se deja que el sistema deduzca cómo llegar a esas conclusiones. Un programa lógico consiste en una base de conocimiento, sobre la cual se pueden realizar preguntas (consultas), y el sistema (motor de inferencia) buscará respuestas.</p>
+<h3 id="qué-es-prolog">¿Qué es Prolog?</h3>
+<p>Prolog (PROgramming in LOGic) es el lenguaje de programación más conocido del paradigma lógico. Se basa en la lógica de primer orden y se utiliza ampliamente en inteligencia artificial, procesamiento del lenguaje natural y sistemas expertos. Su motor de inferencia utiliza un algoritmo de resolución para deducir nuevos hechos.</p>
+<h2 id="primeros-pasos-con-prolog">Primeros Pasos con Prolog</h2>
+<h3 id="instalación">Instalación</h3>
+<p>La implementación más popular de Prolog es SWI-Prolog.</p>
+<ol>
+<li><strong>Descargar SWI-Prolog</strong>: Ve al sitio web oficial de <a href="https://www.swi-prolog.org/">SWI-Prolog</a> y descarga la versión para tu sistema operativo.</li>
+<li><strong>Instalar SWI-Prolog</strong>: Sigue las instrucciones de instalación.</li>
+<li><strong>Verificar</strong>: Abre una terminal y escribe <code>swipl</code>. Si ves el prompt <code>?-</code>, la instalación fue exitosa.</li>
+</ol>
+<p>Alternativamente, puedes usar entornos en línea como <a href="https://swish.swi-prolog.org/">SWISH</a>.</p>
+<h3 id="hola-mundo-en-prolog">&ldquo;¡Hola, Mundo!&rdquo; en Prolog</h3>
+<p>En la consola de Prolog (<code>?-</code>), puedes escribir:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;¡Hola, Mundo!&#39;</span>), <span style="color:#e6db74">nl</span>.
+</span></span></code></pre></div><p>Esto imprimirá &ldquo;¡Hola, Mundo!&rdquo; seguido de una nueva línea (<code>nl</code>). El sistema responderá <code>true.</code> indicando que la consulta fue exitosa. Todas las sentencias en Prolog terminan con un punto (<code>.</code>).</p>
+<p>Para salir del intérprete, escribe <code>halt.</code> o presiona <code>Ctrl+D</code> (o <code>Ctrl+C</code> y luego <code>e</code> para exit).</p>
+<p>Es más común escribir código en archivos <code>.pl</code> (e.g., <code>hola.pl</code>):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% hola.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">saludar</span> <span style="color:#f92672">:-</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;¡Hola desde un archivo!&#39;</span>),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">nl</span>.
+</span></span></code></pre></div><p>Luego, en <code>swipl</code>, carga el archivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> [<span style="color:#e6db74">&#39;hola.pl&#39;</span>]. <span style="color:#75715e">% o consult(&#39;hola.pl&#39;).</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#e6db74">saludar</span>.
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">¡</span>Hola <span style="color:#e6db74">desde</span> <span style="color:#e6db74">un</span> <span style="color:#e6db74">archivo</span>!
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span></code></pre></div><h3 id="comentarios">Comentarios</h3>
+<ul>
+<li>Comentario de una línea: <code>% Esto es un comentario</code></li>
+<li>Comentario multilínea: <code>/* Esto es un comentario ... de varias líneas */</code></li>
+</ul>
+<h2 id="conceptos-fundamentales-de-prolog">Conceptos Fundamentales de Prolog</h2>
+<h3 id="hechos-facts">Hechos (Facts)</h3>
+<p>Los hechos son afirmaciones que se consideran verdaderas sobre el mundo. Declaran relaciones entre objetos.</p>
+<h4 id="guía-para-escribir-hechos">Guía para escribir hechos</h4>
+<ul>
+<li>Los nombres de relaciones (predicados) y objetos (átomos) usualmente empiezan con minúscula.</li>
+<li>La relación aparece primero, seguida de los objetos (argumentos) entre paréntesis, separados por comas.</li>
+<li>Todo hecho debe terminar con un punto.</li>
+<li>Ejemplo: se denomina predicado o cláusula.</li>
+</ul>
+<h4 id="sintaxis-de-hechos">Sintaxis de hechos</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#a6e22e">relacion</span>(<span style="color:#e6db74">objeto1</span>, <span style="color:#e6db74">objeto2</span>, ...).
+</span></span></code></pre></div><h4 id="ejemplos-de-hechos-en-prolog">Ejemplos de hechos en Prolog</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#a6e22e">gato</span>(<span style="color:#e6db74">tom</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">le_gusta_comer</span>(<span style="color:#e6db74">jorge</span>, <span style="color:#e6db74">pasta</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">color_pelo</span>(<span style="color:#e6db74">ana</span>, <span style="color:#e6db74">negro</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">es_perezoso</span>(<span style="color:#e6db74">juan</span>).
+</span></span></code></pre></div><h3 id="reglas-rules">Reglas (Rules)</h3>
+<p>Las reglas permiten definir nuevas relaciones o propiedades basadas en hechos u otras reglas existentes. Una regla establece que algo es verdadero <em>si</em> se cumplen ciertas condiciones.</p>
+<h4 id="sintaxis-de-reglas">Sintaxis de reglas</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#a6e22e">cabeza</span>(Obj1, Obj2) :- <span style="color:#a6e22e">cuerpo_condicion1</span>(Obj1, X), <span style="color:#a6e22e">cuerpo_condicion2</span>(X, Obj2).
+</span></span></code></pre></div><ul>
+<li><code>cabeza</code> es la conclusión.</li>
+<li><code>:-</code> se lee como &ldquo;si&rdquo;.</li>
+<li><code>cuerpo</code> son las condiciones, separadas por comas (<code>,</code> que significa &ldquo;Y&rdquo; lógico) o punto y coma (<code>;</code> que significa &ldquo;O&rdquo; lógico).</li>
+</ul>
+<p>Si tenemos <code>P :- Q;R.</code>, es equivalente a:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span>P :- Q.
+</span></span><span style="display:flex;"><span>P :- R.
+</span></span></code></pre></div><p>Si tenemos , se interpreta como</p>
+<h4 id="ejemplos-de-reglas-en-prolog">Ejemplos de reglas en Prolog</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% Lili está feliz si Lili baila.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">feliz</span>(<span style="color:#e6db74">lili</span>) :- <span style="color:#a6e22e">baila</span>(<span style="color:#e6db74">lili</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Tom tiene hambre si Tom busca comida.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">hambriento</span>(<span style="color:#e6db74">tom</span>) :- <span style="color:#a6e22e">busca_comida</span>(<span style="color:#e6db74">tom</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Jack y Bili son amigos si a ambos les encanta el cricket.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">amigos</span>(<span style="color:#e6db74">jack</span>, <span style="color:#e6db74">bili</span>) :- <span style="color:#a6e22e">le_gusta_cricket</span>(<span style="color:#e6db74">jack</span>), <span style="color:#a6e22e">le_gusta_cricket</span>(<span style="color:#e6db74">bili</span>).
+</span></span></code></pre></div><h3 id="consultas-queries">Consultas (Queries)</h3>
+<p>Las consultas son preguntas que se hacen a la base de conocimiento. Prolog intentará satisfacer la consulta buscando hechos y aplicando reglas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">gato</span>(<span style="color:#e6db74">tom</span>).        <span style="color:#75715e">% ¿Es Tom un gato?</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">le_gusta_comer</span>(<span style="color:#e6db74">jorge</span>, <span style="color:#e6db74">pizza</span>). <span style="color:#75715e">% ¿A Jorge le gusta comer pizza?</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">false</span>. <span style="color:#75715e">% (si no está en la base de conocimiento)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">feliz</span>(<span style="color:#e6db74">lili</span>).      <span style="color:#75715e">% ¿Está Lili feliz?</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Prolog intentará satisfacer baila(lili).</span>
+</span></span></code></pre></div><p>Las variables (empiezan con Mayúscula) permiten hacer preguntas más generales:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">le_gusta_comer</span>(<span style="color:#e6db74">jorge</span>, Comida).
+</span></span><span style="display:flex;"><span>Comida <span style="color:#f92672">=</span> <span style="color:#e6db74">pasta</span>.
+</span></span></code></pre></div><h3 id="base-de-conocimiento">Base de Conocimiento</h3>
+<p>Un conjunto de hechos y reglas forma una base de conocimiento. Usualmente se guarda en un archivo con extensión <code>.pl</code>.</p>
+<p>**Ejemplo: **</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% kb1.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">chica</span>(<span style="color:#e6db74">priya</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">chica</span>(<span style="color:#e6db74">natasha</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">chica</span>(<span style="color:#e6db74">jasmin</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sabe_cocinar</span>(<span style="color:#e6db74">priya</span>).
+</span></span></code></pre></div><p>Para usarla:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> [<span style="color:#e6db74">kb1</span>].
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">chica</span>(X).
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">priya</span> ; <span style="color:#75715e">% presiona ; para buscar más soluciones</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">natasha</span> ;
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">jasmin</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">sabe_cocinar</span>(<span style="color:#e6db74">jasmin</span>).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">false</span>.
+</span></span></code></pre></div><h2 id="relaciones-en-prolog">Relaciones en Prolog</h2>
+<p>Prolog se destaca en definir y consultar relaciones complejas.</p>
+<h3 id="ejemplo-práctico-familia">Ejemplo Práctico: Familia</h3>
+<p>Considera el siguiente archivo <code>familia.pl</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% Hechos: parent(PadreMadre, HijoHija)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">pam</span>, <span style="color:#e6db74">bob</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">tom</span>, <span style="color:#e6db74">bob</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">tom</span>, <span style="color:#e6db74">liz</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">bob</span>, <span style="color:#e6db74">ann</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">bob</span>, <span style="color:#e6db74">pat</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">pat</span>, <span style="color:#e6db74">jim</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">peter</span>, <span style="color:#e6db74">jim</span>). <span style="color:#75715e">% Corregido de &#39;pete&#39; en PDF para consistencia visual</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Hechos: male(Persona), female(Persona)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">male</span>(<span style="color:#e6db74">tom</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">male</span>(<span style="color:#e6db74">bob</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">male</span>(<span style="color:#e6db74">jim</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">male</span>(<span style="color:#e6db74">peter</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">female</span>(<span style="color:#e6db74">pam</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">female</span>(<span style="color:#e6db74">liz</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">female</span>(<span style="color:#e6db74">ann</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">female</span>(<span style="color:#e6db74">pat</span>).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% Reglas</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">mother</span>(Madre, HijoHija) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(Madre, HijoHija),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">female</span>(Madre).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">father</span>(Padre, HijoHija) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(Padre, HijoHija),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">male</span>(Padre).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">has_child</span>(Persona) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(Persona, <span style="color:#66d9ef">_</span>). <span style="color:#75715e">% _ es una variable anónima</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sister</span>(Hermana, Persona) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(PadreMadre, Hermana),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(PadreMadre, Persona),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">female</span>(Hermana),
+</span></span><span style="display:flex;"><span>    Hermana <span style="color:#e6db74">\==</span> Persona. <span style="color:#75715e">% \== significa &#34;no es idéntico a&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">brother</span>(Hermano, Persona) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(PadreMadre, Hermano),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(PadreMadre, Persona),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">male</span>(Hermano),
+</span></span><span style="display:flex;"><span>    Hermano <span style="color:#e6db74">\==</span> Persona.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">grandparent</span>(AbueloAbuela, NietoNieta) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(AbueloAbuela, PadreMadreIntermedio),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">parent</span>(PadreMadreIntermedio, NietoNieta).
+</span></span></code></pre></div><p>Consultas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> [<span style="color:#e6db74">familia</span>].
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">mother</span>(X, <span style="color:#e6db74">bob</span>).
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">pam</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">sister</span>(<span style="color:#e6db74">ann</span>, <span style="color:#e6db74">pat</span>).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">grandparent</span>(<span style="color:#e6db74">tom</span>, <span style="color:#e6db74">ann</span>).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span></code></pre></div><h3 id="recursión-en-relaciones-familiares">Recursión en Relaciones Familiares</h3>
+<p>Podemos definir un &ldquo;predecesor&rdquo; (ancestro) recursivamente:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% X es predecesor de Z si X es padre/madre de Z (caso base)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">predecessor</span>(X, Z) :- <span style="color:#a6e22e">parent</span>(X, Z).
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% X es predecesor de Z si X es padre/madre de Y,</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">% y Y es predecesor de Z (caso recursivo)</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">predecessor</span>(X, Z) :- <span style="color:#a6e22e">parent</span>(X, Y), <span style="color:#a6e22e">predecessor</span>(Y, Z).
+</span></span></code></pre></div><p>Consultas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">predecessor</span>(<span style="color:#e6db74">tom</span>, <span style="color:#e6db74">jim</span>).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span></code></pre></div><h2 id="objetos-de-datos-en-prolog">Objetos de Datos en Prolog</h2>
+<p>Prolog maneja varios tipos de datos, llamados términos.</p>
+<h3 id="átomos">Átomos</h3>
+<p>Nombres simbólicos. Comienzan con minúscula o están entre comillas simples si contienen espacios o empiezan con mayúscula.</p>
+<h3 id="números">Números</h3>
+<p>Enteros y de punto flotante.</p>
+<h3 id="variables">Variables</h3>
+<p>Comienzan con una letra mayúscula o un guion bajo (). Representan valores desconocidos que Prolog intenta instanciar.</p>
+<h3 id="variables-anónimas">Variables Anónimas</h3>
+<p>Un solo guion bajo (). Se usa cuando el valor de una variable no es importante. Cada <code>_</code> es una variable distinta.
+Ej:  (no nos importa quién es el hijo, solo que X tenga uno).</p>
+<h3 id="estructuras">Estructuras</h3>
+<p>Objetos complejos compuestos por un functor (nombre) y argumentos.
+Ej: .
+Los hechos y reglas son en sí estructuras.  es una estructura con functor  y aridad 2.</p>
+<h2 id="operadores">Operadores</h2>
+<h3 id="operadores-de-comparación">Operadores de Comparación</h3>
+<p>Evalúan relaciones numéricas.</p>
+<h3 id="operadores-aritméticos">Operadores Aritméticos</h3>
+<p>Para realizar cálculos. La evaluación se hace con el operador</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> X <span style="color:#f92672">is</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3.</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#ae81ff">8.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> Y <span style="color:#f92672">is</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">3.</span>
+</span></span><span style="display:flex;"><span>Y <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.3333333333333335</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> Z <span style="color:#f92672">is</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">3.</span>
+</span></span><span style="display:flex;"><span>Z <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.</span>
+</span></span></code></pre></div><h2 id="control-de-flujo">Control de Flujo</h2>
+<p>Prolog no tiene estructuras de bucle como otros lenguajes. El control se logra mediante recursión y el mecanismo de backtracking.</p>
+<h3 id="recursión-para-bucles">Recursión para &ldquo;Bucles&rdquo;</h3>
+<p>Para repetir acciones, se usa la recursión.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% Contar desde N hasta Max</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contar</span>(Max, Max) :- <span style="color:#a6e22e">write</span>(Max), <span style="color:#e6db74">nl</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">contar</span>(N, Max) :-
+</span></span><span style="display:flex;"><span>    N <span style="color:#f92672">&lt;</span> Max,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">write</span>(N), <span style="color:#e6db74">nl</span>,
+</span></span><span style="display:flex;"><span>    N1 <span style="color:#f92672">is</span> N <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">contar</span>(N1, Max).
+</span></span></code></pre></div><p>Consulta:  imprimirá 1, 2, 3, 4, 5.</p>
+<h3 id="decisiones-mediante-cláusulas">Decisiones mediante Cláusulas</h3>
+<p>Se pueden simular condicionales usando diferentes cláusulas para un mismo predicado. Prolog intentará unificarlas en orden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% option.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">comparar</span>(X, Y) :- X <span style="color:#f92672">&gt;</span> Y, <span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;X es mayor que Y&#39;</span>), <span style="color:#e6db74">nl</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">comparar</span>(X, Y) :- X <span style="color:#f92672">&lt;</span> Y, <span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;X es menor que Y&#39;</span>), <span style="color:#e6db74">nl</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">comparar</span>(X, Y) :- X <span style="color:#f92672">=:=</span> Y, <span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;X e Y son iguales&#39;</span>), <span style="color:#e6db74">nl</span>.
+</span></span></code></pre></div><p>Consulta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">comparar</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>).
+</span></span><span style="display:flex;"><span>X <span style="color:#e6db74">es</span> <span style="color:#e6db74">mayor</span> <span style="color:#e6db74">que</span> Y
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">comparar</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>).
+</span></span><span style="display:flex;"><span>X <span style="color:#e6db74">es</span> <span style="color:#e6db74">menor</span> <span style="color:#e6db74">que</span> Y
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span></code></pre></div><h2 id="listas-en-prolog">Listas en Prolog</h2>
+<p>Las listas son una estructura de datos fundamental y muy usada.</p>
+<h3 id="operaciones-básicas-con-listas">Operaciones Básicas con Listas</h3>
+<h4 id="comprobación-de-pertenencia-member">Comprobación de Pertenencia (member)</h4>
+<p>Verifica si un elemento está en una lista.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% list_basics.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">miembro</span>(X, [X | <span style="color:#66d9ef">_</span>Cola]). <span style="color:#75715e">% X es miembro si es la cabeza</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">miembro</span>(X, [<span style="color:#66d9ef">_</span>Cabeza | Cola]) :- <span style="color:#a6e22e">miembro</span>(X, Cola). <span style="color:#75715e">% X es miembro si está en la cola</span>
+</span></span></code></pre></div><p>Consulta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">b</span>, [<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>, <span style="color:#e6db74">c</span>]).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">d</span>, [<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>, <span style="color:#e6db74">c</span>]).
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">false</span>.
+</span></span></code></pre></div><h4 id="concatenación-append">Concatenación (append)</h4>
+<p>Une dos listas.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% list_basics.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">concatenar</span>([], Lista2, Lista2).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">concatenar</span>([Cabeza | Cola1], Lista2, [Cabeza | ColaResultado]) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">concatenar</span>(Cola1, Lista2, ColaResultado).
+</span></span></code></pre></div><p>Consulta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">concatenar</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>], [<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>], Resultado).
+</span></span><span style="display:flex;"><span>Resultado <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>].
+</span></span></code></pre></div><h4 id="cálculo-de-longitud-length">Cálculo de Longitud (length)</h4>
+<p>Encuentra el número de elementos en una lista.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#75715e">% list_basics.pl</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">longitud</span>([], <span style="color:#ae81ff">0</span>).
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">longitud</span>([<span style="color:#66d9ef">_</span> | Cola], N) :-
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">longitud</span>(Cola, N1),
+</span></span><span style="display:flex;"><span>    N <span style="color:#f92672">is</span> N1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.</span>
+</span></span></code></pre></div><p>Consulta:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">longitud</span>([<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>, <span style="color:#e6db74">c</span>], L).
+</span></span><span style="display:flex;"><span>L <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.</span>
+</span></span></code></pre></div><h2 id="retroceso-backtracking">Retroceso (Backtracking)</h2>
+<p>Cuando Prolog intenta satisfacer una consulta, puede encontrar múltiples caminos. Si un camino falla, Prolog <em>retrocede</em> al último punto de elección e intenta una alternativa. Esto permite encontrar todas las soluciones posibles.</p>
+<p>En el intérprete, después de una solución, puedes teclear <code>;</code> (punto y coma) para pedirle a Prolog que busque más soluciones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#a6e22e">miembro</span>(X, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]).
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> ;
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> ;
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.</span>
+</span></span></code></pre></div><p>Para ver el proceso de backtracking, puedes usar <code>trace.</code> (y <code>notrace.</code> para desactivarlo):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-prolog" data-lang="prolog"><span style="display:flex;"><span><span style="color:#e6db74">?-</span> <span style="color:#e6db74">trace</span>.
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">true</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#e6db74">trace</span>]  <span style="color:#e6db74">?-</span> <span style="color:#a6e22e">miembro</span>(X, [<span style="color:#e6db74">a</span>,<span style="color:#e6db74">b</span>]).
+</span></span><span style="display:flex;"><span>   Call<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#66d9ef">_</span><span style="color:#ae81ff">11346</span>, [<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>
+</span></span><span style="display:flex;"><span>   Exit<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">a</span>, [<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>  <span style="color:#75715e">% Primera solución: X = a</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">a</span> ;                                   <span style="color:#75715e">% Pedimos más</span>
+</span></span><span style="display:flex;"><span>   Redo<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">10</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">a</span>, [<span style="color:#e6db74">a</span>, <span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>
+</span></span><span style="display:flex;"><span>   Call<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">11</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#66d9ef">_</span><span style="color:#ae81ff">11346</span>, [<span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>
+</span></span><span style="display:flex;"><span>   Exit<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">11</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">b</span>, [<span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>    <span style="color:#75715e">% Segunda solución: X = b</span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span> ;
+</span></span><span style="display:flex;"><span>   Redo<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">11</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#e6db74">b</span>, [<span style="color:#e6db74">b</span>]) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>
+</span></span><span style="display:flex;"><span>   Call<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">12</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#66d9ef">_</span><span style="color:#ae81ff">11346</span>, []) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span>
+</span></span><span style="display:flex;"><span>   Fail<span style="color:#e6db74">:</span> (<span style="color:#ae81ff">12</span>) <span style="color:#a6e22e">miembro</span>(<span style="color:#66d9ef">_</span><span style="color:#ae81ff">11346</span>, []) <span style="color:#e6db74">?</span> <span style="color:#e6db74">creep</span> <span style="color:#75715e">% No hay más</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">false</span>.
+</span></span></code></pre></div><h2 id="conclusión">Conclusión</h2>
+<p>Esta práctica ha proporcionado una introducción sólida al lenguaje Prolog y al paradigma lógico. Pudimos explorar sus conceptos fundamentales, desde hechos y reglas hasta listas y retroceso. Prolog es una herramienta muy poderosa para resolver problemas lógicos y de inteligencia artificial, y su enfoque declarativo ofrece una perspectiva única en comparación con los lenguajes imperativos tradicionales.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://example.org/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
